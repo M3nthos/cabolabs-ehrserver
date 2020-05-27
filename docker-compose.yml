@@ -1,0 +1,29 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  cabo_ehr:
+    image: phillipliu/cabolabs-ehrserver
+    restart: always
+    environment:
+        EHRSERVER_REST_SECRET: "6067dba9-1417-41c5-b1af-92208c77ce77"
+        EHRSERVER_SNQUERY_KEY: "22222222-2222-2222-2222-222222222222"
+    ports:
+        - "8060:8080"
+        - "8070:8090"
+
+  cabo_ehr_db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    expose:
+      - "3306"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
