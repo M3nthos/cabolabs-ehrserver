@@ -17,7 +17,8 @@ ENV PATH $GRAILS_HOME/bin:$PATH
 
 EXPOSE 8090
 RUN grails dependency-report
+RUN chmod +x /app/docker-entrypoint.sh
 # Define default command.
-ENTRYPOINT ["sh", "/docker-entrypoint.sh"]
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
 CMD ["grails", "-Dserver.port=8090", "run-app"]
 
