@@ -18,7 +18,7 @@ ENV PATH $GRAILS_HOME/bin:$PATH
 EXPOSE 8090
 RUN grails dependency-report
 COPY ./*.sh /usr/local/bin/
-#RUN ["/bin/bash", "-c", "chmod +x /app/docker-entrypoint.sh"]
+RUN ["/bin/bash", "-c", "chmod +x /usr/local/bin/docker-entrypoint.sh"]
 #RUN chmod +x /app/docker-entrypoint.sh
 
 # Define default command.
