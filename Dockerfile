@@ -17,6 +17,7 @@ ENV PATH $GRAILS_HOME/bin:$PATH
 
 EXPOSE 8090
 RUN grails dependency-report
+RUN dos2unix entrypoint.sh
 USER root
 
 # Define default command.
