@@ -12,6 +12,8 @@ services:
     ports:
         - "8060:8080"
         - "8070:8090"
+    volumes:
+        - ../cabolabs-volume-conf:/app/grails-app/conf/
 
   ehr_db:
     image: mysql
