@@ -1,6 +1,6 @@
 FROM java
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update -y
+RUN apt-get -y update
 
 # install grails
 RUN curl -L https://github.com/grails/grails-core/releases/download/v3.3.10/grails-3.3.10.zip  -o /grails.zip
