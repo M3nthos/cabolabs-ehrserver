@@ -23,8 +23,8 @@ services:
     expose:
       - "3306"
 
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - "8050:8080"
+#  adminer:
+#    image: adminer
+#    restart: always
+#    ports:
+#      - "8050:8080"
